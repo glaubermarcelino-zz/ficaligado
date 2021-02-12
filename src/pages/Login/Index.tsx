@@ -15,10 +15,10 @@ import { useNavigation } from '@react-navigation/native';
 const Login = (props: any) => {
   const navigation = useNavigation();
   function handleNavigateToNewAccount() {
-     navigation.navigate('Cadastro');
+     navigation.navigate('Cadastro');console.log('OI');
   }
 function handleNavigateToLogin(){
-  console.log('OI')
+  
   navigation.navigate('Home');
 }
 
@@ -56,12 +56,12 @@ function handleNavigateToLogin(){
               </Text>
             </View>
           </RectButton>
-          <RectButton
+          <TouchableOpacity
             style={styles.buttonTransparent}
             // onPress={props.handleSubmit}>
             onPress={() => handleNavigateToNewAccount()}>
             <Text style={styles.buttonText}>Criar Conta</Text>
-          </RectButton>
+          </TouchableOpacity>
         </View>
       </View>
     </Container>
