@@ -12,6 +12,7 @@ import Publicacao from './src/pages/Publicacao/Index';
 import Mapa from './src/pages/Mapa/Index';
 import NovaOcorrencia from './src/pages/NovaOcorrencia/Index';
 import Publicacoes from './src/pages/Publicacao/Index';
+import SideMenu from './src/components/SideMenu/Index';
 
 const AppStack = createStackNavigator();
 
@@ -36,6 +37,7 @@ const Routes = () => {
         <AppStack.Screen name="Mapa" component={Mapa} />
         <AppStack.Screen name="NovaOcorrencia" component={NovaOcorrencia} />
         <AppStack.Screen name="BemVindo" component={BemVindo} />
+        <AppStack.Screen name="SideMenu" component={SideMenu} />
       </AppStack.Navigator>
     </NavigationContainer>
   );

@@ -15,7 +15,7 @@ import { useNavigation } from '@react-navigation/native';
 const Login = (props: any) => {
   const navigation = useNavigation();
   function handleNavigateToNewAccount() {
-     navigation.navigate('Cadastro');console.log('OI');
+     navigation.navigate('Cadastro');
   }
 function handleNavigateToLogin(){
   

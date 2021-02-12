@@ -1,11 +1,17 @@
 import React from 'react';
 import {View, StyleSheet, Text, Image, TouchableOpacity} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 interface HeaderProps {
   titulo: string;
   ImgSource: string;
 }
 
 const HeaderUser: React.FC<HeaderProps> = (props: HeaderProps) => {
+
+  const navigation = useNavigation();
+  function handleNavigateToMenu(){
+    navigation.navigate('SideMenu');
+  }
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -57,17 +63,20 @@ const HeaderUser: React.FC<HeaderProps> = (props: HeaderProps) => {
           </TouchableOpacity>
         </View>
       </View>
+        <TouchableOpacity
+          onPress={() => handleNavigateToMenu()}>
       <View style={{backgroundColor: '#4B397E', height: 9}}>
-        <Image
-          style={{
-            width: 18,
-            height: 12,
-            justifyContent: 'flex-start',
-            marginTop: -15,
-          }}
-          source={require('../../assets/icons/menu-hamburguer.png')}
-        />
+          <Image
+            style={{
+              width: 18,
+              height: 12,
+              justifyContent: 'flex-start',
+              marginTop: -15,
+            }}
+            source={require('../../assets/icons/menu-hamburguer.png')}
+          />
       </View>
+        </TouchableOpacity>
     </View>
   );
 };

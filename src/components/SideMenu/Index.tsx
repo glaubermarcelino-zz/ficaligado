@@ -5,7 +5,14 @@ import {StatusBar} from 'react-native';
 import {Container} from '../../GlobalStyle/styleGlobal';
 import HeaderUser from '../HeaderUser/Index';
 
+import { useNavigation } from '@react-navigation/native';
+
 const SideMenu = () => {
+  const navigation = useNavigation();
+  function handleNavigateToPage(page:string) {
+     navigation.navigate(page);
+  }
+
   //Oculta a barra de status
   StatusBar.setHidden(true);
   return (
@@ -35,7 +42,7 @@ const SideMenu = () => {
               // borderColor: 'red',
               paddingLeft: 30,
             }}>
-            <TouchableOpacity onPress={() => {}} activeOpacity={0.6}>
+            <TouchableOpacity onPress={() => handleNavigateToPage('Home')} activeOpacity={0.6}>
               <View
                 style={{
                   justifyContent: 'flex-start',
@@ -47,7 +54,7 @@ const SideMenu = () => {
                 <Text style={{fontSize: 16, color: '#fff'}}>Home</Text>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {}} activeOpacity={0.6}>
+            <TouchableOpacity onPress={() => handleNavigateToPage('Perfil')} activeOpacity={0.6}>
               <View
                 style={{
                   justifyContent: 'flex-start',
@@ -59,7 +66,7 @@ const SideMenu = () => {
                 <Text style={{fontSize: 16, color: '#fff'}}>Perfil</Text>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {}} activeOpacity={0.6}>
+            <TouchableOpacity onPress={() => handleNavigateToPage('Publicacoes')} activeOpacity={0.6}>
               <View
                 style={{
                   justifyContent: 'flex-start',
@@ -71,7 +78,7 @@ const SideMenu = () => {
                 <Text style={{fontSize: 16, color: '#fff'}}>Ocorrência</Text>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {}} activeOpacity={0.6}>
+            <TouchableOpacity onPress={() => handleNavigateToPage('Configuracoes')} activeOpacity={0.6}>
               <View
                 style={{
                   justifyContent: 'flex-start',
@@ -83,7 +90,7 @@ const SideMenu = () => {
                 <Text style={{fontSize: 16, color: '#fff'}}>Configurações</Text>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {}} activeOpacity={0.6}>
+            <TouchableOpacity onPress={() => handleNavigateToPage('Help')} activeOpacity={0.6}>
               <View
                 style={{
                   justifyContent: 'flex-start',
@@ -95,7 +102,7 @@ const SideMenu = () => {
                 <Text style={{fontSize: 16, color: '#fff'}}>Ajuda</Text>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {}} activeOpacity={0.6}>
+            <TouchableOpacity onPress={() => handleNavigateToPage('PoliticaPrivacidade')} activeOpacity={0.6}>
               <View
                 style={{
                   justifyContent: 'flex-start',
@@ -109,7 +116,7 @@ const SideMenu = () => {
                 </Text>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {}} activeOpacity={0.6}>
+            <TouchableOpacity onPress={() => handleNavigateToPage('Termos')} activeOpacity={0.6}>
               <View
                 style={{
                   justifyContent: 'flex-start',
@@ -123,7 +130,7 @@ const SideMenu = () => {
                 </Text>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {}} activeOpacity={0.6}>
+            <TouchableOpacity onPress={() => handleNavigateToPage('Home')} activeOpacity={0.6}>
               <View
                 style={{
                   justifyContent: 'flex-start',
