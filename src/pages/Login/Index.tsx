@@ -10,18 +10,16 @@ import {
 } from 'react-native';
 import {RectButton} from 'react-native-gesture-handler';
 import {Container} from './style';
-// import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 
 const Login = (props: any) => {
-  // const navigation = useNavigation();
+  const navigation = useNavigation();
   function handleNavigateToNewAccount() {
-    // navigation.navigate('Cadastro');
-  }
-  function handleNavigateToHome() {
-    // navigation.navigate('Home');
+     navigation.navigate('Cadastro');
   }
 function handleNavigateToLogin(){
-Alert.alert('Ação detectada',"Você acionou o login")
+  console.log('OI')
+  navigation.navigate('Home');
 }
 
   StatusBar.setHidden(true);
@@ -50,7 +48,7 @@ Alert.alert('Ação detectada',"Você acionou o login")
           <RectButton
             style={styles.button}
             // onPress={props.handleSubmit}>
-            onPress={() => handleNavigateToHome()}>
+            onPress={() => handleNavigateToCadastro()}>
             <View style={{flexDirection: 'row'}}>
               <Text style={styles.buttonText}>
                 <Image source={require('../../assets/icons/google.png')}/>
@@ -61,7 +59,7 @@ Alert.alert('Ação detectada',"Você acionou o login")
           <RectButton
             style={styles.buttonTransparent}
             // onPress={props.handleSubmit}>
-            onPress={() => handleNavigateToHome()}>
+            onPress={() => handleNavigateToNewAccount()}>
             <Text style={styles.buttonText}>Criar Conta</Text>
           </RectButton>
         </View>

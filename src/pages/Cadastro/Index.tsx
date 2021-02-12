@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {View, Text, StyleSheet, TextInput} from 'react-native';
 import {RectButton} from 'react-native-gesture-handler';
 import {Container, Title} from './style';
-// import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 
 import {withFormik} from 'formik';
 import Header from '../../components/Header/Index';
@@ -13,12 +13,12 @@ const Cadastro = (props: any) => {
   // function handleNavigateToPoint() {}
   const handleTextChange = (newText: any) => setState({value: newText});
 
-  // const navigation = useNavigation();
+  const navigation = useNavigation();
   function handleNavigateToLogin() {
     // navigation.navigate('Login');
   }
   function handleNavigateToAtivacao() {
-    // navigation.navigate('Ativacao');
+     navigation.navigate('Home');
   }
 
   return (

@@ -5,12 +5,12 @@ import { StatusBar } from 'react-native';
 import { Container } from '../../GlobalStyle/styleGlobal';
 
 export default class Splash extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   setTimeout(() => {
-  //     this.props.navigation.navigate('Login');
-  //   }, 8000);
-  // }
+  constructor(props) {
+    super(props);
+    setTimeout(() => {
+      this.props.navigation.navigate('Login');
+    }, 8000);
+  }
 
   render() {
     //Oculta a barra de status

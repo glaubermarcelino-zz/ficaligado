@@ -11,22 +11,21 @@ import {
 } from 'react-native';
 import GeneralStatusBarColor from '../../components/StatusbarColor/Index';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
-import {useNavigation} from '@react-navigation/native';
 import Header from '../../components/Header/Index';
 import HeaderUser from '../../components/HeaderUser/Index';
 import CardMenu from '../../components/CardMenu/Index';
 import CarouselCards from '../../components/Carrousel/Index';
-// import { NavigationActions } from 'react-navigation';
+import { useNavigation } from '@react-navigation/native';
 
 const Home = () => {
   const [selectedItems, setselectedItems] = useState<number[]>([]);
-  // const navigation = useNavigation();
+  const navigation = useNavigation();
 
   function handleNavigateBack() {
     Alert.alert('Oooops...', 'Funcionalidade de retorno acionada');
   }
-  function handleNavigate() {
-    Alert.alert('Sistema Offline', 'Sistema indisponível no momento');
+  function handleNavigate(page:string) {
+    navigation.navigate(page);
   }
   interface CardMenuItem {
     Title: string;
@@ -102,7 +101,7 @@ const Home = () => {
               }}>
               <TouchableOpacity
                 style={[styles.item]}
-                onPress={() => handleNavigate()}
+                onPress={() => handleNavigate('Home')}
                 activeOpacity={0.6}>
                 <View
                   style={{
@@ -124,7 +123,7 @@ const Home = () => {
               </TouchableOpacity>
               <TouchableOpacity
                 style={[styles.item]}
-                onPress={() => handleNavigate()}
+                onPress={() => handleNavigate('Home')}
                 activeOpacity={0.6}>
                 <View
                   style={{
@@ -146,7 +145,7 @@ const Home = () => {
               </TouchableOpacity>
               <TouchableOpacity
                 style={[styles.item]}
-                onPress={() => handleNavigate()}
+                onPress={() => handleNavigate('Publicacoes')}
                 activeOpacity={0.6}>
                 <View
                   style={{
@@ -168,7 +167,7 @@ const Home = () => {
               }}> */}
               <TouchableOpacity
                 style={[styles.item]}
-                onPress={() => navigation.navigate('Veiculos')}
+                onPress={() => navigation.navigate('Educacao')}
                 activeOpacity={0.6}>
                 <View
                   style={{
@@ -184,7 +183,7 @@ const Home = () => {
 
               <TouchableOpacity
                 style={[styles.item]}
-                onPress={() => handleNavigate()}
+                onPress={() => handleNavigate('Descontos')}
                 activeOpacity={0.6}>
                 <View
                   style={{
@@ -199,7 +198,7 @@ const Home = () => {
               </TouchableOpacity>
               <TouchableOpacity
                 style={[styles.item]}
-                onPress={() => handleNavigate()}
+                onPress={() => handleNavigate('Mapa')}
                 activeOpacity={0.6}>
                 <View
                   style={{
